@@ -13,7 +13,7 @@ When you enter your password, you should be connected to the server.
 
 ## Trying Some Commands
 
-Once you are connected to the server, try commands like cd, ls, pw, rm, cat or any of the following ones that I have tried.
+Once you are connected to the server, try commands like cd, ls, pwd, rm, cat or any of the following ones that I have tried. You can try adding or deleting files as well.
 <img width="1440" alt="Screenshot 2022-09-30 at 7 57 26 PM" src="https://user-images.githubusercontent.com/114612660/193392732-f3d5d622-2c58-4e42-aaf5-6df058e1be29.png">
 <img width="1440" alt="Screenshot 2022-09-30 at 7 57 43 PM" src="https://user-images.githubusercontent.com/114612660/193392741-d56c00c6-d084-451c-8606-7ec5fbec4d5c.png">
 
@@ -33,5 +33,5 @@ In this next step, we try to create two files, one public and one private. We do
 
 
 ## Optimizing Remote Running
-Now we will be able to run our code on file on the server. We can use the commands that we tried earlier on these files.
+Now we will be able to run our code on file on the server. We can use the commands that we tried earlier on these files. You can also use the up-arrow to use previor commands or the ";" to write multiple commands on the same line. 
 <img width="1440" alt="Screenshot 2022-09-30 at 9 15 37 PM" src="https://user-images.githubusercontent.com/114612660/193393003-67f9c82b-6834-4152-8d73-186a68965c2b.png">
