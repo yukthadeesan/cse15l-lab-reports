@@ -1,2 +1,3 @@
-Hello world 
-https://github.com/yukthadeesan/cse15l-lab-reports/blob/main/lab-report-2-week-1.md 
+# CSE 15L - LAB REPORTS
+*This is my GITHUB Page where I shall be posting my lab reports each week*
+[Lab Report 1](https://yukthadeesan.github.io/cse15l-lab-reports/lab-report-2-week-1.html)
