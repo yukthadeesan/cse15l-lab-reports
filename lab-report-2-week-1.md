@@ -2,6 +2,7 @@
 My version of a tutorial to log into a course specific account
 ## Installing VScode
 I already had VS Code downloaded on my laptop, but following the link [VSCode](https://code.visualstudio.com/) was pretty straightforward. The homepage looks something like this:
+
 <img width="1440" alt="Screenshot 2022-09-30 at 9 25 20 PM" src="https://user-images.githubusercontent.com/114612660/193392417-55a479f2-8e6c-4aed-9ea9-991b1d0943b6.png">
 
 ## Remotely Connecting
@@ -56,7 +57,7 @@ After that, trying to compile and run it on the client (your own computer) would
  
  Now, we use the command `ssh cs15lfa22zz@ieng6.ucsd.edu` to connect to the server and compile the code with 
  ```
- javac WhereAmI.java
+javac WhereAmI.java
 java WhereAmI
  ```
  This is the ouput as shown in the remote server:
