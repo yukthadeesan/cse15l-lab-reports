@@ -60,7 +60,7 @@ What I have done is:
 
 ## averageWithoutLowest
 
-Debugging the reverseInPlace method in the ArrayExamples file:
+Debugging the averageWithoutLowest method in the ArrayExamples file:
 
 ### Test
 
