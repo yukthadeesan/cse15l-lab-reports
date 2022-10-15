@@ -67,11 +67,21 @@ java WhereAmI
  
 
 ## SSH Keys
-In this next step, we try to create two files, one public and one private. We do so because we will be able to access files without the interruption of having to enter the password while we are using it. WE try using the ssh keygen command to create twp files which we would be able to access with our personal username and path, and then use the public file. 
-<img width="1440" alt="Screenshot 2022-09-30 at 9 13 52 PM" src="https://user-images.githubusercontent.com/114612660/193393023-cfd5e1d7-888d-4796-be57-088a90a80ad7.png">
- Unfortunately in this step, even though I tried multiple times to set up using ssh keygen and was able to follow through most of the lines of code, I was only able to access the private file, and had to enter the password every time. 
+In this next step, we try to create two files, storing a public key on the server and a private key on the client (on your personal computer). We do so because we will be able to access files without the interruption of having to enter the password while we are using it. We try using the `ssh-keygen` command to create two files which we would be able to access with our personal username and path, and then use the public file. 
+ 
+ <img width="807" alt="image" src="https://user-images.githubusercontent.com/114612660/195968451-a56b8568-2e01-4a5f-9dad-749a47869623.png">
+ 
+ This shows you information about where the public and private keys are saved and you can select where you want to store them on your computer. I have saved my file in `/Users/yukthadeesan/.ssh/id_rsa`
+ 
+ Now on the server, if you run the command `mkdir .ssh`
+ and back on client `scp (public filepath) cs15lfa22@ieng6.ucsd.edu:~/.ssh/authorized_keys` (with your username and filepath), you will be able to login to the server without having to enter your password, i.e. just by hitting 'enter'
+ 
+ <img width="780" alt="image" src="https://user-images.githubusercontent.com/114612660/195968750-f3aa2c0c-cff2-48dd-b9a5-bf6816e3508c.png">
 
 
 ## Optimizing Remote Running
-Now we will be able to run our code on file on the server. We can use the commands that we tried earlier on these files. You can also use the up-arrow to use previor commands or the ";" to write multiple commands on the same line. 
+Now we will be able to run our code on file on the server. We can use the commands that we tried earlier on these files. You can also use the up-arrow to use previor commands or the ";" to write multiple commands on the same line. I have tried out some commands like
+ ```
+  cp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI
+ ```
 <img width="1440" alt="Screenshot 2022-09-30 at 9 15 37 PM" src="https://user-images.githubusercontent.com/114612660/193393003-67f9c82b-6834-4152-8d73-186a68965c2b.png">
