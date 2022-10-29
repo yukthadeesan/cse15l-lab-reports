@@ -1,6 +1,119 @@
 # LAB REPORT 2
-## PART 2
 
+## PART 1
+
+## Search Engine
+### Code
+
+```
+import java.io.IOException;
+import java.net.URI;
+import java.util.ArrayList;
+
+class Handler implements URLHandler {
+
+    ArrayList<String> stringList= new ArrayList<>();
+
+    public String handleRequest(URI url) {
+
+        if (url.getPath().equals("/")) {
+            String strToReturn= "";
+            for(int i=0; i< stringList.size(); i++){
+                strToReturn+=stringList.get(i);
+            }
+            return "String List: "+ strToReturn;
+        } 
+        else if (url.getPath().contains("/add")) {
+            String[] parameters = url.getQuery().split("=");
+            if(parameters[0].contains("s")){
+            stringList.add((parameters[1]));
+            return String.format("String added!");
+            }
+            else{
+                return "invalid command";
+            }
+        }
+        else if (url.getPath().contains("/search")){
+            String strToReturnNew= "";
+            String[] parameters = url.getQuery().split("=");
+            if(parameters[0].contains("s")){
+            for(int i=0; i< stringList.size(); i++){
+                if(stringList.get(i).contains(parameters[1])){
+                strToReturnNew += (stringList.get(i)+" ");
+                }    
+            }
+            if(strToReturnNew.isEmpty()){
+                return "No strings with the given substring was found.";
+            }
+            else{
+            return "Strings found are: "+strToReturnNew;}
+            }                  
+            else{
+                return "invalid command";
+            }
+        }
+        else{
+        return "404 Not Found!";
+        }
+    }
+}
+
+class SearchEngine {
+    public static void main(String[] args) throws IOException {
+        if(args.length == 0){
+            System.out.println("Missing port number! Try any number between 1024 to 49151");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+
+        Server.start(port, new Handler());
+    }
+}
+```
+#### Compiling the code using the following commands, 
+
+<img width="497" alt="image" src="https://user-images.githubusercontent.com/114612660/198813241-b6e0ba10-746e-412f-873d-96e3efa271b7.png">
+
+this calls the main method which opens the URL handler and the method handleRequest.
+Copying the link to a browser, 
+
+<img width="402" alt="image" src="https://user-images.githubusercontent.com/114612660/198813229-f85fe56e-4c61-4b8c-bd29-1adf7f0b16be.png">
+
+the handleRequest method takes the url that was created as an argument and runs through the first if loop in the method and produces an empty list of strings
+
+#### Implementing the add command for a few words:
+
+<img width="419" alt="image" src="https://user-images.githubusercontent.com/114612660/198813277-e3b930fb-e872-4856-a412-40a88a72690b.png">
+
+<img width="360" alt="image" src="https://user-images.githubusercontent.com/114612660/198813283-7de4a62c-88be-4156-a5a7-d16da8154456.png">
+
+<img width="344" alt="image" src="https://user-images.githubusercontent.com/114612660/198813289-c786da4e-236b-495c-a815-9991a06ebfe2.png">
+
+<img width="360" alt="image" src="https://user-images.githubusercontent.com/114612660/198813304-9205df11-2d7e-4221-b6c6-afa31e6b5ba8.png">
+
+<img width="432" alt="image" src="https://user-images.githubusercontent.com/114612660/198813313-597bd7ff-ed7d-4d86-b8db-2644647d5e17.png">
+
+all these words are added to our initial list by running through the second else if loop that asks the list to add the given string. So our list currently contains the strings: "music", "for", "a", "sushi", "restaurant".
+
+#### Implementing the query to find words:
+
+<img width="370" alt="image" src="https://user-images.githubusercontent.com/114612660/198813332-b2f7ba4c-037e-4b95-a77a-81e8ad345038.png">
+
+Here, the given substring to search was given as "us", so the method iterates through the list to find strings that contain the given substring. In this case, the strings "music" and "sushi" contained the given substring so it returns the strings. 
+
+#### Implementing commands that throw an error:
+
+I am just trying to enter a few invalid commands to make sure that the program does not misinterpret any other commands. It should throw out an error like the following.
+
+<img width="382" alt="image" src="https://user-images.githubusercontent.com/114612660/198813361-6e896fcb-041c-4a9c-b356-28ec66eac9e1.png">
+
+<img width="377" alt="image" src="https://user-images.githubusercontent.com/114612660/198813385-e8b862a8-0f8e-4d17-a917-5134dcfd6fd5.png">
+
+
+
+
+## PART 2
 
 ## reverseInPlace
 
@@ -28,6 +141,9 @@ java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnit
 The test failed as shown in the screenshot
 
 <img width="1219" alt="image" src="https://user-images.githubusercontent.com/114612660/195971699-93783597-e900-4734-a26c-8466c1fd99f1.png">
+
+As it says in the screenshot, the output is expected to be {3,2,1} but the given code produces the list **{3,2,3}** which is the **symptom**
+That is why it says the list differs at the second index. I have written more about why the code produces this output under 'code fix'. 
 
 ### Code Fix
 
@@ -84,6 +200,9 @@ java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnit
 The test failed as shown in the screenshot
 
 <img width="1221" alt="image" src="https://user-images.githubusercontent.com/114612660/195971733-9260e597-7c22-4e2c-b6dc-f61d8b24053a.png">
+
+In this case, the **symptom** of the code is **1.8** as opposed to the value 3 that we are supposed to get.
+More about why the test fails is written in the 'code fix' below. 
 
 ### Code Fix
 
