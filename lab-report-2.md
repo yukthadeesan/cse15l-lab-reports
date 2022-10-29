@@ -142,8 +142,7 @@ The test failed as shown in the screenshot
 
 <img width="1219" alt="image" src="https://user-images.githubusercontent.com/114612660/195971699-93783597-e900-4734-a26c-8466c1fd99f1.png">
 
-As it says in the screenshot, the output is expected to be {3,2,1} but the given code produces the list **{3,2,3}** which is the **symptom**
-That is why it says the list differs at the second index. I have written more about why the code produces this output under 'code fix'. 
+As it says in the screenshot, the output is expected to be {3,2,1} but the given code produces the list **{3,2,3}** which is the **symptom**. I have written more about why the code produces this output under 'code fix'. 
 
 ### Code Fix
 
