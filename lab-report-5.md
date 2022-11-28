@@ -1,6 +1,7 @@
 # LAB REPORT 5  
 
 ## CODE: grade.sh
+
 ```
 err() {
   echo $1
@@ -51,6 +52,7 @@ echo Score: "$(($total_tests - $number_of_tests_failed))" out of $total_tests
 exit
 ```
  ## Examples
+ 
 Here are a few examples of student submission repositories tested against the grader. Their outputs on the browser as well as on the terminal have been attached. 
 To open the grader on the browser, I used:
 ```
@@ -102,6 +104,7 @@ The reported grade was loaded in the [URL](http://localhost:5028/grade?repo=http
 <img width="1032" alt="image" src="https://user-images.githubusercontent.com/114612660/204250412-700e275b-a532-4920-a2c0-2fd25f046722.png">
 
 ## Tracing the code
+
 Tracing the `grade.sh` code for [Student submission 3](https://github.com/ucsd-cse15l-f22/list-methods-compile-error): 
 * In the first few lines of code (lines 1-3) I have created a function which will produce an error message and set return code 1 which indicates exit status failure.
 * In line 11, the test is used to check if a repository has been entered in the terminal. If it is left empty, (for example, the command `bash grade.sh `) it will produce the given error message. In this file, since we have given the link to a repository, the exit code is 0 and there is NO error message. 
