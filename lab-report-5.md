@@ -52,7 +52,7 @@ echo Score: "$(($total_tests - $number_of_tests_failed))" out of $total_tests
 exit
 ```
 
- ## Examples
+## Examples
  
 Here are a few examples of student submission repositories tested against the grader. Their outputs on the browser as well as on the terminal have been attached. 
 To open the grader on the browser, I used:
