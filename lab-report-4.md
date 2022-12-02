@@ -22,4 +22,6 @@ vim<space>D<tab><enter>/start<enter>cebase<esc>n.n.:wq<enter>
 
 <img width="92" alt="image" src="https://user-images.githubusercontent.com/114612660/203977251-b2f32014-5562-4cc7-a561-0800b7854a04.png">
 
-
+PART 2
+scp 175 seconds
+vim 73 seconds
